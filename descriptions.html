@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Your name here">
+  <meta name="description" content="One week of #RunKeeper Tweets">
+  <!--Load math.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.0.0/math.js"></script><!--math.js-->
+  <!--Stylesheets-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!--Load local stylesheet-->
+  <link rel="stylesheet" href="css/style.css">
+  <!--Load local runkeeper_tweets file, which will load all of the tweets into the variable RUNKEEPER_TWEETS-->
+  <script type="text/javascript" src="js/get_saved_tweets.js"></script>
+  <!--Load local tweet.js file, which was generated from TypeScript-->
+  <script type="text/javascript" src="js/tweet.js"></script>
+  <!--Load local descriptions.js file-->
+  <script type="text/javascript" src="js/descriptions.js"></script>
+  <title>One week of #RunKeeper Tweets</title>
+</head>
+<body class="container">
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item navbar-brand">
+        <span class="navbar-brand">
+          One week of #RunKeeper Tweets
+        </span>
+      </li>
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">
+          About the data
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="activities.html" class="nav-link">
+          A wide range of activities
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a href="descriptions.html" class="nav-link">
+          What people are saying
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <h1>What people are saying</h1>
+    <p>
+      What text are you interested in looking for?
+      <input id="textFilter" type="text" onInput = "searchHandler(this.value)">
+    </p>
+    <p>
+      <span id="searchCount">???</span> Tweets contain the text '<span id="searchText">???</span>'.
+    </p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Activity type</th>
+          <th scope="col">Tweet</th>
+        </tr>
+      </thead>
+      <tbody id="tweetTable">
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
